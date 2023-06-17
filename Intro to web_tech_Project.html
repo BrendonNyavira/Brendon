@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXT Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="/" id="navbar_logo">
+                <i class="fas fa-gem"></i>NEXT
+            </a>
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="/" class="navbar_links">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="https://vr-expert.com/vr-headsets/?msclkid=6f88813d090819f4facee5b6828abcbb" class="navbar_links">Tech</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="https://www.apple.com/pl/" class="navbar_links">Product</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="https://appleid.apple.com/#!&page=signin" class="button">Sign Up</a>
+                </li>
+                <li class="navbar_item" id="clock"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="main">
+        <div class="main_container"></div>
+        <div class="main_content">
+            <h1>NEXT GENERATION</h1>
+            <h2>Technology</h2>
+            <p>See what makes us different.</p>
+            <button class="main_btn"><a href="/">Get Started</a></button>
+        </div>
+        <div class="main_img--container">
+            <img src="pexels-moose-photos-1036645.jpg" alt="pic" id="main_img">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>    
+
+
+    <!-- Services Section -->
+    <div class="services">
+        <h1>See what the hype is about</h1>
+        <div class="services_container">
+            <div class="services_card">
+                <h2>Experience Bliss</h2>
+                <p>AI Powered Technology</p>
+                <button class="main_btn"><a href="/">Get Started</a></button>
+            </div>
+            <div class="services_card">
+                <h2>Are You Ready?</h2>
+                <p>Take the Leap</p>
+                <button class="main_btn"><a href="/">Get Started</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateClock() {
+            var clockElement = document.getElementById("clock");
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var ampm = hours >= 12 ? "PM" : "AM";
+            hours = formatTime(hours);
+            minutes = formatTime(minutes);
+            seconds = formatTime(seconds);
+            clockElement.textContent = hours + ":" + minutes + ":" + seconds + " " + ampm;
+            setTimeout(updateClock, 1000);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+
+        updateClock();
+    </script>
+</body>
+</html>
